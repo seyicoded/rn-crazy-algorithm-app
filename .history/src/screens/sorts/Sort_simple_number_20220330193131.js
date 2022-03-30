@@ -124,7 +124,7 @@ export default function Sort_simple_number() {
                 multiline={true}
                 keyboardType='numeric'
                 returnKeyType='done'
-                right={<TextInput.Icon forceTextInputFocus={false} onPress={()=>sort()} style={{zIndex: 999}} name="send" />}
+                right={<TextInput.Icon onPress={()=>sort()} style={{zIndex: 999}} name="send" />}
                 onChangeText={text => setunsortedVal(text)}
             />
 
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
     input: {
         marginHorizontal: 10,
         marginVertical: 8,
-        // backgroundColor: 'rgba(0, 0, 0, 0.05)',
+        backgroundColor: 'rgba(0, 0, 0, 0.05)',
         paddingHorizontal: 8,
         zIndex: 99
     },

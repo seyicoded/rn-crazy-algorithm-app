@@ -141,7 +141,7 @@ export default function Sort_alphabet() {
                 multiline={true}
                 keyboardType='ascii-capable'
                 returnKeyType='done'
-                right={<TextInput.Icon forceTextInputFocus={false} onPress={()=>sort()} style={{zIndex: 999}} name="send" />}
+                right={<TextInput.Icon onPress={()=>sort()} style={{zIndex: 999}} name="send" />}
                 onChangeText={text => setunsortedVal(text)}
             />
 

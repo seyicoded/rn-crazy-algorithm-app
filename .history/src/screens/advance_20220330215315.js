@@ -10,7 +10,7 @@ const data = [
         dscription: 'A simple filtration of numbers, capable of accepting user input and filtering.',
     },
 ]
-export default function Filter({route, navigation}) {
+export default function Advance({route, navigation}) {
     const title = route.params.title;
     
   return (
@@ -35,7 +35,7 @@ export default function Filter({route, navigation}) {
             )}>
                 <View>
                     <Text style={{fontWeight: '600', fontSize: 18}}>Let's Start</Text>
-                    <Text style={{fontSize: 12}}>Just a Prep Complexly on Filtering</Text>
+                    <Text style={{fontSize: 12}}>Just a Prep Complexly on Other Advance stuff (randomly tho)</Text>
                 </View>
         </Banner>
       

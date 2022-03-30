@@ -5,9 +5,14 @@ import Header from '../layout/header'
 
 const data = [
     {
-        id: 'Filter_simple_number',
-        title: 'Even|Odd Numbers Arena',
-        dscription: 'A simple filtration of numbers, capable of accepting user input and filtering.',
+        id: 'Sort_simple_number',
+        title: 'Sort Simple Numbers',
+        dscription: 'A simple sorter for numbers, capable of accepting user input and sort.',
+    },
+    {
+        id: 'Sort_alphabet',
+        title: 'Sort Alphabet',
+        dscription: 'A simple sorter for alpha.., capable of accepting user input and sort.',
     },
 ]
 export default function Filter({route, navigation}) {
@@ -35,7 +40,7 @@ export default function Filter({route, navigation}) {
             )}>
                 <View>
                     <Text style={{fontWeight: '600', fontSize: 18}}>Let's Start</Text>
-                    <Text style={{fontSize: 12}}>Just a Prep Complexly on Filtering</Text>
+                    <Text style={{fontSize: 12}}>Just a Prep Complexly on Sorting</Text>
                 </View>
         </Banner>
       

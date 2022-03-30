@@ -5,12 +5,12 @@ import Header from '../layout/header'
 
 const data = [
     {
-        id: 'Filter_simple_number',
-        title: 'Even|Odd Numbers Arena',
-        dscription: 'A simple filtration of numbers, capable of accepting user input and filtering.',
+        id: 'Advance_number',
+        title: 'Numbers Arena',
+        dscription: 'A filtration & sorting of numbers, capable of accepting user input and sort/filtering.',
     },
 ]
-export default function Filter({route, navigation}) {
+export default function Advance({route, navigation}) {
     const title = route.params.title;
     
   return (
@@ -35,7 +35,7 @@ export default function Filter({route, navigation}) {
             )}>
                 <View>
                     <Text style={{fontWeight: '600', fontSize: 18}}>Let's Start</Text>
-                    <Text style={{fontSize: 12}}>Just a Prep Complexly on Filtering</Text>
+                    <Text style={{fontSize: 12}}>Just a Prep Complexly on Other Advance stuff (randomly tho)</Text>
                 </View>
         </Banner>
       

@@ -3,7 +3,7 @@ import React from 'react'
 import { Banner, RadioButton, TextInput } from 'react-native-paper';
 import {Ionicons} from '@expo/vector-icons'
 
-export default function Sort_simple_number() {
+export default function Adnvace_number() {
     const [value, setValue] = React.useState('ascending');
     const [unsortedVal, setunsortedVal] = React.useState('');
     const [sortedVal, setsortedVal] = React.useState([]);
@@ -71,7 +71,7 @@ export default function Sort_simple_number() {
                     </View>
                 </TouchableOpacity>
 
-                {/* <TouchableOpacity onPress={()=>setValue('odd_only')}>
+                <TouchableOpacity onPress={()=>setValue('odd_only')}>
                     <View style={styles.radio}>
                         <Text>Odd Only</Text>
                         <RadioButton value="odd_only" />
@@ -111,7 +111,7 @@ export default function Sort_simple_number() {
                         <Text>Even Ascending Order</Text>
                         <RadioButton value="even_ascending" />
                     </View>
-                </TouchableOpacity> */}
+                </TouchableOpacity>
             </RadioButton.Group>
 
             <Text />

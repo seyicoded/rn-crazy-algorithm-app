@@ -3,7 +3,7 @@ import React from 'react'
 import { Banner, RadioButton, TextInput } from 'react-native-paper';
 import {Ionicons} from '@expo/vector-icons'
 
-export default function Sort_alphabet() {
+export default function Multiplier_number() {
     const [value, setValue] = React.useState('ascending');
     const [byWhat, setbyWhat] = React.useState('letter');
     const [unsortedVal, setunsortedVal] = React.useState('');
@@ -83,53 +83,15 @@ export default function Sort_alphabet() {
                     <View>
                         <Text style={{fontWeight: '600', fontSize: 18}}>Objectives</Text>
                         <Text />
-                        <Text style={{fontSize: 12}}>Sorting Any alphabet input in orders, depending on mood selected</Text>
+                        <Text style={{fontSize: 12}}>
+                            A number figure multiplier which multiple itself until it can't anymore.
+                            <Text> e.g 39 as input, then this happens 3x9 = 27, 2 x 7 = 14, 1 x 4 = 5, so 5 is returned </Text>
+                        </Text>
                     </View>
             </Banner>
             
             <Text />
-            <Text style={styles.title_element}>Select Mode</Text>
-
-            <RadioButton.Group onValueChange={newValue => setValue(newValue)} value={value}>
-                <TouchableOpacity onPress={()=>setValue('ascending')}>
-                    <View style={styles.radio}>
-                        <Text>Ascending Order</Text>
-                        <RadioButton value="ascending" />
-                    </View>
-                </TouchableOpacity>
-                
-                <TouchableOpacity onPress={()=>setValue('descending')}>
-                    <View style={styles.radio}>
-                        <Text>Descending Order</Text>
-                        <RadioButton value="descending" />
-                    </View>
-                </TouchableOpacity>
-
-                
-            </RadioButton.Group>
-
-            <Text />
-            <Text style={styles.title_element}>Sort By</Text>
-
-            <RadioButton.Group onValueChange={byWhat => setbyWhat(byWhat)} value={byWhat}>
-                <TouchableOpacity onPress={()=>setbyWhat('letter')}>
-                    <View style={styles.radio}>
-                        <Text>Letters</Text>
-                        <RadioButton value="letter" />
-                    </View>
-                </TouchableOpacity>
-                
-                <TouchableOpacity onPress={()=>setbyWhat('word')}>
-                    <View style={styles.radio}>
-                        <Text>Words</Text>
-                        <RadioButton value="word" />
-                    </View>
-                </TouchableOpacity>
-
-                
-            </RadioButton.Group>
-
-            <Text />
+            
             <Text style={styles.title_element}>Enter Word Input to Sort</Text>
             <Text style={{fontSize: 10, marginLeft: 8}}>remember: 0-1, A-Z, a-z</Text>
 

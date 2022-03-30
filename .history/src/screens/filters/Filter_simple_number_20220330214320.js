@@ -3,8 +3,8 @@ import React from 'react'
 import { Banner, RadioButton, TextInput } from 'react-native-paper';
 import {Ionicons} from '@expo/vector-icons'
 
-export default function Sort_simple_number() {
-    const [value, setValue] = React.useState('ascending');
+export default function Filter_simple_number() {
+    const [value, setValue] = React.useState('odd_only');
     const [unsortedVal, setunsortedVal] = React.useState('');
     const [sortedVal, setsortedVal] = React.useState([]);
 
@@ -57,21 +57,8 @@ export default function Sort_simple_number() {
             <Text style={styles.title_element}>Select Mode</Text>
 
             <RadioButton.Group onValueChange={newValue => setValue(newValue)} value={value}>
-                <TouchableOpacity onPress={()=>setValue('ascending')}>
-                    <View style={styles.radio}>
-                        <Text>Ascending Order</Text>
-                        <RadioButton value="ascending" />
-                    </View>
-                </TouchableOpacity>
                 
-                <TouchableOpacity onPress={()=>setValue('descending')}>
-                    <View style={styles.radio}>
-                        <Text>Descending Order</Text>
-                        <RadioButton value="descending" />
-                    </View>
-                </TouchableOpacity>
-
-                {/* <TouchableOpacity onPress={()=>setValue('odd_only')}>
+                <TouchableOpacity onPress={()=>setValue('odd_only')}>
                     <View style={styles.radio}>
                         <Text>Odd Only</Text>
                         <RadioButton value="odd_only" />
@@ -85,33 +72,6 @@ export default function Sort_simple_number() {
                     </View>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={()=>setValue('odd_descending')}>
-                    <View style={styles.radio}>
-                        <Text>Odd Descending Order</Text>
-                        <RadioButton value="odd_descending" />
-                    </View>
-                </TouchableOpacity>
-
-                <TouchableOpacity onPress={()=>setValue('even_descending')}>
-                    <View style={styles.radio}>
-                        <Text>Even Descending Order</Text>
-                        <RadioButton value="even_descending" />
-                    </View>
-                </TouchableOpacity>
-
-                <TouchableOpacity onPress={()=>setValue('odd_ascending')}>
-                    <View style={styles.radio}>
-                        <Text>Odd Ascending Order</Text>
-                        <RadioButton value="odd_ascending" />
-                    </View>
-                </TouchableOpacity>
-
-                <TouchableOpacity onPress={()=>setValue('even_ascending')}>
-                    <View style={styles.radio}>
-                        <Text>Even Ascending Order</Text>
-                        <RadioButton value="even_ascending" />
-                    </View>
-                </TouchableOpacity> */}
             </RadioButton.Group>
 
             <Text />

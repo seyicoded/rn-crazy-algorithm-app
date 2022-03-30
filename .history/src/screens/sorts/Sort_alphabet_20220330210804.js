@@ -131,17 +131,16 @@ export default function Sort_alphabet() {
 
             <Text />
             <Text style={styles.title_element}>Enter Word Input to Sort</Text>
-            <Text style={{fontSize: 10, marginLeft: 8}}>remember: 0-1, A-Z, a-z</Text>
 
             <TextInput
                 label='Enter Input'
-                mode='outlined'                
+                mode='outlined'
                 style={styles.input}
                 value={unsortedVal}
                 multiline={true}
                 keyboardType='ascii-capable'
                 returnKeyType='done'
-                right={<TextInput.Icon forceTextInputFocus={false} onPress={()=>sort()} style={{zIndex: 999}} name="send" />}
+                right={<TextInput.Icon onPress={()=>sort()} style={{zIndex: 999}} name="send" />}
                 onChangeText={text => setunsortedVal(text)}
             />
 
@@ -184,7 +183,7 @@ const styles = StyleSheet.create({
     input: {
         marginHorizontal: 10,
         marginVertical: 8,
-        // backgroundColor: 'rgba(0, 0, 0, 0.05)',
+        backgroundColor: 'rgba(0, 0, 0, 0.05)',
         paddingHorizontal: 8,
         zIndex: 99
     },

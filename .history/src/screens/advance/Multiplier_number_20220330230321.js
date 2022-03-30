@@ -3,40 +3,73 @@ import React from 'react'
 import { Banner, RadioButton, TextInput } from 'react-native-paper';
 import {Ionicons} from '@expo/vector-icons'
 
-export default function Sort_simple_number() {
+export default function Multiplier_number() {
     const [value, setValue] = React.useState('ascending');
+    const [byWhat, setbyWhat] = React.useState('letter');
     const [unsortedVal, setunsortedVal] = React.useState('');
     const [sortedVal, setsortedVal] = React.useState([]);
 
     const sort = async() => {
-        var unsorted = unsortedVal.split('');
-        console.log('unsorted', unsorted);
+        if(byWhat == 'letter'){
+            var unsorted = unsortedVal.split('');
+            console.log('unsorted', unsorted);
 
-        if(value == 'ascending'){
-            // ascending order
-            for(var i = 0; i < unsorted.length; i++){
-                for(var j = i ; j > 0 ;j--){
-                    if(unsorted[j] < unsorted[j-1]){
-                        var temp = unsorted[j];
-                        unsorted[j] = unsorted[j-1];
-                        unsorted[j-1] = temp;
+            if(value == 'ascending'){
+                // ascending order
+                for(var i = 0; i < unsorted.length; i++){
+                    for(var j = i ; j > 0 ;j--){
+                        if(unsorted[j] < unsorted[j-1]){
+                            var temp = unsorted[j];
+                            unsorted[j] = unsorted[j-1];
+                            unsorted[j-1] = temp;
+                        }
+                    }
+                }
+            }else if(value == 'descending'){
+                for(var i = 0; i < unsorted.length; i++){
+                    for(var j = i ; j > 0 ;j--){
+                        if(unsorted[j] > unsorted[j-1]){
+                            var temp = unsorted[j];
+                            unsorted[j] = unsorted[j-1];
+                            unsorted[j-1] = temp;
+                        }
                     }
                 }
             }
-        }else if(value == 'descending'){
-            for(var i = 0; i < unsorted.length; i++){
-                for(var j = i ; j > 0 ;j--){
-                    if(unsorted[j] > unsorted[j-1]){
-                        var temp = unsorted[j];
-                        unsorted[j] = unsorted[j-1];
-                        unsorted[j-1] = temp;
+
+            setsortedVal(unsorted);
+
+        }else{
+            // sort by words
+            var unsorted = unsortedVal.split(' ');
+            console.log('unsorted', unsorted);
+
+            if(value == 'ascending'){
+                // ascending order
+                for(var i = 0; i < unsorted.length; i++){
+                    for(var j = i ; j > 0 ;j--){
+                        if(unsorted[j].substring(0, 1) < unsorted[j-1].substring(0, 1)){
+                            var temp = unsorted[j];
+                            unsorted[j] = unsorted[j-1];
+                            unsorted[j-1] = temp;
+                        }
+                    }
+                }
+            }else if(value == 'descending'){
+                for(var i = 0; i < unsorted.length; i++){
+                    for(var j = i ; j > 0 ;j--){
+                        if(unsorted[j].substring(0, 1) > unsorted[j-1].substring(0, 1)){
+                            var temp = unsorted[j];
+                            unsorted[j] = unsorted[j-1];
+                            unsorted[j-1] = temp;
+                        }
                     }
                 }
             }
+
+            setsortedVal(unsorted);
+
         }
-
-        setsortedVal(unsorted);
-
     }
 
   return (
@@ -50,9 +83,10 @@ export default function Sort_simple_number() {
                     <View>
                         <Text style={{fontWeight: '600', fontSize: 18}}>Objectives</Text>
                         <Text />
-                        <Text style={{fontSize: 12}}>Sorting Any numeric input in orders, depending on mood selected</Text>
+                        <Text style={{fontSize: 12}}>A number figure multiplier which multiple itself until it can't anymore.</Text>
                     </View>
             </Banner>
+            
             <Text />
             <Text style={styles.title_element}>Select Mode</Text>
 
@@ -71,58 +105,41 @@ export default function Sort_simple_number() {
                     </View>
                 </TouchableOpacity>
 
-                {/* <TouchableOpacity onPress={()=>setValue('odd_only')}>
-                    <View style={styles.radio}>
-                        <Text>Odd Only</Text>
-                        <RadioButton value="odd_only" />
-                    </View>
-                </TouchableOpacity>
-
-                <TouchableOpacity onPress={()=>setValue('even_only')}>
-                    <View style={styles.radio}>
-                        <Text>Even Only</Text>
-                        <RadioButton value="even_only" />
-                    </View>
-                </TouchableOpacity>
-
-                <TouchableOpacity onPress={()=>setValue('odd_descending')}>
-                    <View style={styles.radio}>
-                        <Text>Odd Descending Order</Text>
-                        <RadioButton value="odd_descending" />
-                    </View>
-                </TouchableOpacity>
-
-                <TouchableOpacity onPress={()=>setValue('even_descending')}>
-                    <View style={styles.radio}>
-                        <Text>Even Descending Order</Text>
-                        <RadioButton value="even_descending" />
-                    </View>
-                </TouchableOpacity>
-
-                <TouchableOpacity onPress={()=>setValue('odd_ascending')}>
-                    <View style={styles.radio}>
-                        <Text>Odd Ascending Order</Text>
-                        <RadioButton value="odd_ascending" />
-                    </View>
-                </TouchableOpacity>
-
-                <TouchableOpacity onPress={()=>setValue('even_ascending')}>
-                    <View style={styles.radio}>
-                        <Text>Even Ascending Order</Text>
-                        <RadioButton value="even_ascending" />
-                    </View>
-                </TouchableOpacity> */}
+                
             </RadioButton.Group>
 
             <Text />
-            <Text style={styles.title_element}>Enter Numeric Input to Sort</Text>
+            <Text style={styles.title_element}>Sort By</Text>
+
+            <RadioButton.Group onValueChange={byWhat => setbyWhat(byWhat)} value={byWhat}>
+                <TouchableOpacity onPress={()=>setbyWhat('letter')}>
+                    <View style={styles.radio}>
+                        <Text>Letters</Text>
+                        <RadioButton value="letter" />
+                    </View>
+                </TouchableOpacity>
+                
+                <TouchableOpacity onPress={()=>setbyWhat('word')}>
+                    <View style={styles.radio}>
+                        <Text>Words</Text>
+                        <RadioButton value="word" />
+                    </View>
+                </TouchableOpacity>
+
+                
+            </RadioButton.Group>
+
+            <Text />
+            <Text style={styles.title_element}>Enter Word Input to Sort</Text>
+            <Text style={{fontSize: 10, marginLeft: 8}}>remember: 0-1, A-Z, a-z</Text>
+
             <TextInput
                 label='Enter Input'
-                mode='outlined'
+                mode='outlined'                
                 style={styles.input}
                 value={unsortedVal}
                 multiline={true}
-                keyboardType='numeric'
+                keyboardType='ascii-capable'
                 returnKeyType='done'
                 right={<TextInput.Icon forceTextInputFocus={false} onPress={()=>sort()} style={{zIndex: 999}} name="send" />}
                 onChangeText={text => setunsortedVal(text)}
@@ -134,7 +151,10 @@ export default function Sort_simple_number() {
                 sortedVal.length > 0 ?
                 <View>
                     <Text style={[styles.title_element, {marginTop: 14}]}>Sorted Output</Text>
-                    <Text style={styles.sorted_output}>{sortedVal.join('')}</Text>
+                    <Text style={styles.sorted_output}>{
+                        (byWhat == 'letter') ? sortedVal.join('') : sortedVal.join(' ')
+                        
+                    }</Text>
                 </View>
                 :<></>
             }

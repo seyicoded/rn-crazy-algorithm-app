@@ -3,7 +3,7 @@ import React from 'react'
 import { Banner, RadioButton, TextInput } from 'react-native-paper';
 import {Ionicons} from '@expo/vector-icons'
 
-export default function Sort_simple_number() {
+export default function Sort_alphabet() {
     const [value, setValue] = React.useState('ascending');
     const [unsortedVal, setunsortedVal] = React.useState('');
     const [sortedVal, setsortedVal] = React.useState([]);
@@ -50,7 +50,7 @@ export default function Sort_simple_number() {
                     <View>
                         <Text style={{fontWeight: '600', fontSize: 18}}>Objectives</Text>
                         <Text />
-                        <Text style={{fontSize: 12}}>Sorting Any numeric input in orders, depending on mood selected</Text>
+                        <Text style={{fontSize: 12}}>Sorting Any alphabet input in orders, depending on mood selected</Text>
                     </View>
             </Banner>
             <Text />
@@ -115,16 +115,16 @@ export default function Sort_simple_number() {
             </RadioButton.Group>
 
             <Text />
-            <Text style={styles.title_element}>Enter Numeric Input to Sort</Text>
+            <Text style={styles.title_element}>Enter Word Input to Sort individually</Text>
             <TextInput
                 label='Enter Input'
                 mode='outlined'
                 style={styles.input}
                 value={unsortedVal}
                 multiline={true}
-                keyboardType='numeric'
+                keyboardType='ascii-capable'
                 returnKeyType='done'
-                right={<TextInput.Icon forceTextInputFocus={false} onPress={()=>sort()} style={{zIndex: 999}} name="send" />}
+                right={<TextInput.Icon onPress={()=>sort()} style={{zIndex: 999}} name="send" />}
                 onChangeText={text => setunsortedVal(text)}
             />
 
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
     input: {
         marginHorizontal: 10,
         marginVertical: 8,
-        // backgroundColor: 'rgba(0, 0, 0, 0.05)',
+        backgroundColor: 'rgba(0, 0, 0, 0.05)',
         paddingHorizontal: 8,
         zIndex: 99
     },

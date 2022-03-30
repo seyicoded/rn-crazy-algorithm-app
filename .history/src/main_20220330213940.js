@@ -9,8 +9,6 @@ import Advance from './screens/advance'
 import Sort_simple_number from './screens/sorts/Sort_simple_number'
 import Sort_alphabet from './screens/sorts/Sort_alphabet'
 import Filter_simple_number from './screens/filters/Filter_simple_number'
-import Advance_number from './screens/advance/Advance_number'
-import Multiplier_number from './screens/advance/Multiplier_number'
 
 const StackNav = createStackNavigator()
 
@@ -29,8 +27,6 @@ export default function Main() {
 
             {/* filter aspect */}
             <StackNav.Screen name="Filter_simple_number" options={{title: 'Number Filter', headerStyle: {backgroundColor: 'darkblue', color: 'white'}, headerTitleStyle: {color: 'white'}}} component={Filter_simple_number} />
-            <StackNav.Screen name="Advance_number" options={{title: 'Advance Number Section', headerStyle: {backgroundColor: 'darkblue', color: 'white'}, headerTitleStyle: {color: 'white'}}} component={Advance_number} />
-            <StackNav.Screen name="Multiplier_number" options={{title: 'Multiplier Number Section', headerStyle: {backgroundColor: 'darkblue', color: 'white'}, headerTitleStyle: {color: 'white'}}} component={Multiplier_number} />
         </StackNav.Navigator>
     </NavigationContainer>
   )

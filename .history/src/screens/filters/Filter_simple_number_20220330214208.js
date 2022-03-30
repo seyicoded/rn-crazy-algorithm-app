@@ -3,7 +3,7 @@ import React from 'react'
 import { Banner, RadioButton, TextInput } from 'react-native-paper';
 import {Ionicons} from '@expo/vector-icons'
 
-export default function Sort_simple_number() {
+export default function Filter_simple_number() {
     const [value, setValue] = React.useState('ascending');
     const [unsortedVal, setunsortedVal] = React.useState('');
     const [sortedVal, setsortedVal] = React.useState([]);

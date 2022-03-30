@@ -3,7 +3,7 @@ import React from 'react'
 import { Banner, RadioButton, TextInput } from 'react-native-paper';
 import {Ionicons} from '@expo/vector-icons'
 
-export default function Sort_simple_number() {
+export default function Adnvace_number() {
     const [value, setValue] = React.useState('ascending');
     const [unsortedVal, setunsortedVal] = React.useState('');
     const [sortedVal, setsortedVal] = React.useState([]);
@@ -11,6 +11,8 @@ export default function Sort_simple_number() {
     const sort = async() => {
         var unsorted = unsortedVal.split('');
         console.log('unsorted', unsorted);
+        var new_array = [];
+        var count = 0;
 
         if(value == 'ascending'){
             // ascending order
@@ -33,6 +35,25 @@ export default function Sort_simple_number() {
                     }
                 }
             }
+        }else if(value == 'odd_only'){
+            // ascending order
+            for(var i = 0; i < unsorted.length; i++){
+                if(unsorted[i] % 2 != 0){
+                    new_array.push(unsorted[i]);
+                }
+            }
+
+            setsortedVal(new_array);
+            return ;
+        }else if(value == 'even_only'){
+            for(var i = 0; i < unsorted.length; i++){
+                if(unsorted[i] % 2 == 0){
+                    new_array.push(unsorted[i]);
+                }
+            }
+
+            setsortedVal(new_array);
+            return ;
         }
 
         setsortedVal(unsorted);
@@ -71,7 +92,7 @@ export default function Sort_simple_number() {
                     </View>
                 </TouchableOpacity>
 
-                {/* <TouchableOpacity onPress={()=>setValue('odd_only')}>
+                <TouchableOpacity onPress={()=>setValue('odd_only')}>
                     <View style={styles.radio}>
                         <Text>Odd Only</Text>
                         <RadioButton value="odd_only" />
@@ -111,7 +132,7 @@ export default function Sort_simple_number() {
                         <Text>Even Ascending Order</Text>
                         <RadioButton value="even_ascending" />
                     </View>
-                </TouchableOpacity> */}
+                </TouchableOpacity>
             </RadioButton.Group>
 
             <Text />
