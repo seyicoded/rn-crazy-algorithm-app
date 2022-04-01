@@ -10,7 +10,7 @@ export default function Multiplier_number() {
     const [sortedVal, setsortedVal] = React.useState('');
     const [calDone, setcalDone] = React.useState([]);
 
-    // console.log(calDone)
+    console.log(calDone)
 
     const calculate = (numbers, counts) => {
         var number = unsortedVal;
@@ -41,7 +41,7 @@ export default function Multiplier_number() {
             console.log(number.toString())
             
             var num_array = (number).toString().split('');
-            var calRecordIndexer = num_array.join(' x ');
+            var calRecordIndexer = num_array.join('x');
             var new_num = 1;
             for (let i = 0; i < num_array.length; i++) {
                 const element = parseInt(num_array[i]);
@@ -107,15 +107,12 @@ export default function Multiplier_number() {
                     </Text>
 
                     <Text/>
-                    <Text style={{marginLeft: 10}}>Belows are the calculation done:</Text>
-                    <View style={{alignItems: 'center',}}>
-                        {
-                            calDone.map((item, index) => {
-                                return <Text style={{fontSize: 23, marginTop: 3}}>{item}</Text>
-                            })
-                        }
-                    </View>
-                    
+                    <Text>Belows are the calculation done:</Text>
+                    {
+                        calDone.map((item, index) => {
+                            <Text>{item}</Text>
+                        })
+                    }
                 </View>
                 :<></>
             }

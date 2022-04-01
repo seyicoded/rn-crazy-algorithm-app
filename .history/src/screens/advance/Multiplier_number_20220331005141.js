@@ -8,14 +8,10 @@ export default function Multiplier_number() {
     const [byWhat, setbyWhat] = React.useState('letter');
     const [unsortedVal, setunsortedVal] = React.useState('');
     const [sortedVal, setsortedVal] = React.useState('');
-    const [calDone, setcalDone] = React.useState([]);
-
-    // console.log(calDone)
 
     const calculate = (numbers, counts) => {
         var number = unsortedVal;
         var count = 0;
-        var calRecord = [];
         // check if length is one
         // if(number.length <= 1){
         //     setsortedVal(`final number is: ${number}, number of calculation: ${count}`);
@@ -34,27 +30,22 @@ export default function Multiplier_number() {
         do{
             if(number.toString().length <= 1){
                 setsortedVal(`final number is: ${number}, number of calculation: ${count}`);
-                setcalDone(calRecord);
                 return ;
             }
-            
+
             console.log(number.toString())
             
             var num_array = (number).toString().split('');
-            var calRecordIndexer = num_array.join(' x ');
             var new_num = 1;
             for (let i = 0; i < num_array.length; i++) {
                 const element = parseInt(num_array[i]);
                 new_num *= element;
             }
-
-            calRecordIndexer = calRecordIndexer + ' = ' + new_num;
-            calRecord[count] = calRecordIndexer;
+    
             count++;
             number = new_num;
             if(number.toString().length <= 1){
                 setsortedVal(`final number is: ${number}, number of calculation: ${count}`);
-                setcalDone(calRecord);
                 return ;
             }
             
@@ -101,21 +92,10 @@ export default function Multiplier_number() {
             {
                 sortedVal.length > 0 ?
                 <View>
-                    <Text style={[styles.title_element, {marginTop: 14}]}>Solved Output</Text>
+                    <Text style={[styles.title_element, {marginTop: 14}]}>Sorted Output</Text>
                     <Text style={styles.sorted_output}>
                         {sortedVal}
                     </Text>
-
-                    <Text/>
-                    <Text style={{marginLeft: 10}}>Belows are the calculation done:</Text>
-                    <View style={{alignItems: 'center',}}>
-                        {
-                            calDone.map((item, index) => {
-                                return <Text style={{fontSize: 23, marginTop: 3}}>{item}</Text>
-                            })
-                        }
-                    </View>
-                    
                 </View>
                 :<></>
             }

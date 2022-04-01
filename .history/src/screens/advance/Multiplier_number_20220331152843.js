@@ -107,11 +107,11 @@ export default function Multiplier_number() {
                     </Text>
 
                     <Text/>
-                    <Text style={{marginLeft: 10}}>Belows are the calculation done:</Text>
+                    <Text>Belows are the calculation done:</Text>
                     <View style={{alignItems: 'center',}}>
                         {
                             calDone.map((item, index) => {
-                                return <Text style={{fontSize: 23, marginTop: 3}}>{item}</Text>
+                                return <Text style={{fontSize: 23, }}>{item}</Text>
                             })
                         }
                     </View>
