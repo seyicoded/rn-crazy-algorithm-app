@@ -20,15 +20,6 @@ const data = [
         dscription: `Given an array A of integers and integer K, return the maximum S such that there exists ¡ < ; with A] + AU)
         = S and S < K. If no such i, j exist satisfying this equation, return •1.`,
     },
-    {
-        id: 'TuringTest2',
-        title: 'Turing Test 2',
-        dscription: `Suppose you're given a set which originally contains numbers from 1 to n. Unfortunately, due to a data error,
-        one of the numbers in the set got duplicated to another number in the set, which results in a repetition of one
-        number and a loss of another number.
-        Given an array num representing the data status of this set after the error, find and return the number that
-        occurs twice and the number that is missing in the form of an array.`,
-    },
 ]
 export default function Advance({route, navigation}) {
     const title = route.params.title;

@@ -12,7 +12,6 @@ import Filter_simple_number from './screens/filters/Filter_simple_number'
 import Advance_number from './screens/advance/Advance_number'
 import Multiplier_number from './screens/advance/Multiplier_number'
 import TuringTest1 from './screens/advance/TuringTest1'
-import TuringTest2 from './screens/advance/TuringTest2'
 
 const StackNav = createStackNavigator()
 
@@ -34,7 +33,6 @@ export default function Main() {
             <StackNav.Screen name="Advance_number" options={{title: 'Advance Number Section', headerStyle: {backgroundColor: 'darkblue', color: 'white'}, headerTitleStyle: {color: 'white'}}} component={Advance_number} />
             <StackNav.Screen name="Multiplier_number" options={{title: 'Multiplier Number Section', headerStyle: {backgroundColor: 'darkblue', color: 'white'}, headerTitleStyle: {color: 'white'}}} component={Multiplier_number} />
             <StackNav.Screen name="TuringTest1" options={{title: 'Turing Test 1', headerStyle: {backgroundColor: 'darkblue', color: 'white'}, headerTitleStyle: {color: 'white'}}} component={TuringTest1} />
-            <StackNav.Screen name="TuringTest2" options={{title: 'Turing Test 2', headerStyle: {backgroundColor: 'darkblue', color: 'white'}, headerTitleStyle: {color: 'white'}}} component={TuringTest2} />
         </StackNav.Navigator>
     </NavigationContainer>
   )
